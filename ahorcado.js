@@ -1,48 +1,29 @@
 
 const letraIngresada = document.getElementById('input-nueva-palabra');
 
-let palabras = ["hola","chau","perro","gato","devs","oracle"];
+var palabras = ["hola","chau","perro","gato","devs","oracle"];
 
 const btnIniciarJuego = document.getElementById('iniciar-juego');
 
+// AGREGAR PALABRA
 const btnNuevaPalabra = document.getElementById('nueva-palabra');
 
 btnNuevaPalabra.addEventListener('click',(event)=>{
     event.preventDefault();
-    palabras.push(letraIngresada.value)
-    localStorage.setItem('nueva-array',palabras)
-
-    // console.log(palabras)
-
+    return palabras.push(letraIngresada.value)
 })
 
-let aa = localStorage.getItem('nueva-array');
+// SELECCIONAR PALABRA
 
-console.log(aa)
+const selcionarPalabra = () =>{
+    let palabraRamdon = palabras[Math.round(Math.random()*(palabras.length-1))]
+    return palabraRamdon
+} 
 
-
-btnIniciarJuego.addEventListener('click', () =>{
-    
-    let selcionarPalabra = palabras[Math.floor(Math.random()*6)]
-
-    console.log(selcionarPalabra)
-
-
-
-
-
-
-    console.log(letraIngresada);
-
-
-const letra = document.createElement("li")
-letra.textContent="8"
-document.getElementById("palabra")
-
-palabra.appendChild(letra)
-
-// palabra.appendChild(letra)
-
+btnIniciarJuego.addEventListener('click', (event) =>{
+    event.preventDefault();
+    console.log('anda el evento')
+    selcionarPalabra()
 
 })
 
