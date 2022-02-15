@@ -8,7 +8,7 @@ let palabraRamdon = palabras[Math.round(Math.random()*(palabras.length-1))]
 return palabraRamdon
 console.log(palabraRamdon)
 
-!3) PORQUE EN EL CODIGO NO LLAMA A LA FUNCION palabraArray MIENTRAS Q SI LA LLAMO EN CONSOLA SI FUNCIONA
+!3) PORQUE EN EL CODIGO NO LLAMA A LA FUNCION palabraArray MIENTRAS Q SI LA LLAMO EN CONSOLA SI FUNCIONA. TENGO QUE CREAR LA FUNCION DENTRO DEL EVENTO PARA LLAMARLA ??
 
 !4) RETURN FUNCIONA EN ENVENTOS
 */
@@ -46,20 +46,24 @@ btnInciarJuego.addEventListener("click", ()=>{
     let arraySilabas = palabraElegida.split("")
     console.log(arraySilabas)
     
+    
+    // CREAR LI SEGUN palabrArray
+    
+    for (let i of arraySilabas){
+    const letra = document.createElement("li")
+    letra.textContent=i
+    espaciosSilabas.appendChild(letra)
+    }
+
+    parentElement
+    // BORRAR CHILD
+    // window.removeChild(espaciosSilabas)
 
 
 
 })
 
 
-
-// CREAR LI SEGUN palabrArray
-
-// for (let i of palabraArray()){
-// const letra = document.createElement("li")
-// letra.textContent=i
-// espaciosSilabas.appendChild(letra)
-// }
 
 
 
