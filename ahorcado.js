@@ -43,10 +43,11 @@ const btnInciarJuego = document.getElementById('iniciar-juego')
 //     return palabras[Math.round(Math.random()*(palabras.length-1))]
 // }
 
+let palabraElegida = palabras[Math.round(Math.random()*(palabras.length-1))]
+console.log(palabraElegida)
+
 btnInciarJuego.addEventListener("click", ()=>{
     console.log("incia el juego")
-    let palabraElegida = palabras[Math.round(Math.random()*(palabras.length-1))]
-    console.log(palabraElegida)
 
 
     // DIVIDIR PALABRA EN SILABAS
@@ -71,7 +72,18 @@ btnInciarJuego.addEventListener("click", ()=>{
 
 })
 
+// VALIDAR COINCIDENCIA DE LETRAS 
 
+letraIngresada.addEventListener("keypress", (event) => {
+    for (let i in palabraElegida)
+    if (event.key == document.querySelector("ul").children[i].textContent) {
+    console.log("acerto")
+    } else {
+        
+    }
+
+    
+})
 
 
 
