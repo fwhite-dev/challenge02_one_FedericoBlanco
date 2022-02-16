@@ -13,17 +13,25 @@ console.log(palabraRamdon)
 !4) RETURN FUNCIONA EN ENVENTOS
 */
 
-// AGREGAR PALABRA
+// ARRAY INICIAL
 let palabras = ["hola","chau","perro","gato"];
+
+// REFERECNIA INPUT
 const letraIngresada = document.getElementById('input-nueva-palabra');
 
+// REFERENCIA BOTON INCIAR
 const btnAgregarPalabra = document.getElementById('nueva-palabra');
 
 btnAgregarPalabra.addEventListener('click',(event)=>{
     event.preventDefault();
-    palabras.push(letraIngresada.value)
-    console.log(palabras)
-    
+    // !no funciona el if para validar string vacio
+    if (letraIngresada==" "){
+        return;
+    } else {
+        palabras.push(letraIngresada.value)
+        console.log(palabras)
+        
+    }
 })
 
 
@@ -53,15 +61,17 @@ btnInciarJuego.addEventListener("click", ()=>{
     const letra = document.createElement("li")
     letra.textContent=i
     espaciosSilabas.appendChild(letra)
-    }
-
-    parentElement
+}
+    //*falta eliminar los li creados o replazarlos por li nvos
+    // espaciosSilabas.removeChild(letra)
+    // parentElement
     // BORRAR CHILD
-    // window.removeChild(espaciosSilabas)
 
 
 
 })
+
+
 
 
 
