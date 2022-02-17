@@ -47,55 +47,41 @@ const btnInciarJuego = document.getElementById('iniciar-juego')
 let palabraElegida = palabras[Math.round(Math.random()*(palabras.length-1))]
 console.log(palabraElegida)
 
-btnInciarJuego.addEventListener("click", ()=>{
+btnInciarJuego.addEventListener("click", () => {
     console.log("incia el juego")
-
-
-    //* CREAR UN ARRAY CON LAS SILABAS
-    
+//* CREAR UN ARRAY CON LAS SILABAS   
     let arraySilabas = palabraElegida.split("")
     console.log(arraySilabas)
-    
-    
-    //* CREAR LI SEGUN palabrArray
-    
-    for (let i of arraySilabas){
-    const letra = document.createElement("span")
-    letra.textContent=i
-    letra.classList.add("spanSilabas")
-   
-    letra.style.borderBottom = "2px solid #E7E247"
-    letra.style.paddingLeft= "8px"
-    letra.style.paddingRight= "8px"
-    letra.style.fontFamily="Oswald, sans-serif";
-    letra.style.fontSize="24px";
-    letra.style.color="#E7E247"
-    
-    
-
-    espaciosSilabas.appendChild(letra)
-}
-    //!falta eliminar los li creados o replazarlos por li nvos
-    // espaciosSilabas.removeChild(letra)
-    // parentElement
-    // BORRAR CHILD
-
-
-
-})
-
-//* VALIDAR COINCIDENCIA DE LETRAS 
-
-letraIngresada.addEventListener("keypress", (event) => {
-    if (palabraElegida != palabraElegida.replace(/event.key/g,1)){
-        console.log("acerto")
+//* CREAR SPAN SEGUN palabrArray
+    for (i of arraySilabas){
+        const letra = document.createElement("span")
+        letra.textContent=i
+        
+        letra.style.borderBottom = "2px solid #E7E247"
+        letra.style.paddingLeft= "8px"
+        letra.style.paddingRight= "8px"
+        letra.style.fontFamily="Oswald, sans-serif";
+        letra.style.fontSize="24px";
+        letra.style.color="#E7E247"
+        
+        espaciosSilabas.appendChild(letra)
+        let r = document.querySelector("span")
+        console.log(r)
     }
+    
+    letraIngresada.addEventListener("keypress", (event) => {
+        for(silaba of arraySilabas){
+            
+            if(silaba == event.key){
+                    console.log("acerto")
 
-
-
-
-
-
+                } else {
+                console.log("NO acerto")
+                
+                }}})
+    })
+    
+    
     //? for (let i in palabraElegida)
     //? if (event.key == document.querySelector("ul").children[i].textContent) {
     //? console.log("acerto")
@@ -112,12 +98,8 @@ letraIngresada.addEventListener("keypress", (event) => {
 
     // pincel.fillStyle = "green"
     // pincel.fillRect(200,750,15,-600)
-    // pincel.fillRect(200,150,0,15)
+    // pincel.fillRect(200,150,0,15) 
 
-
-    
-    
-})
 
 
 
