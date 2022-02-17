@@ -35,7 +35,7 @@ btnAgregarPalabra.addEventListener('click',(event)=>{
 })
 
 
-// SELECCIONAR PALABRA
+//* SELECCIONAR PALABRA
 
 const btnInciarJuego = document.getElementById('iniciar-juego')
 // !FUNCION PARA LLAMAR EN EL ENVENTO DEL btnInciarJuego. NO PUEDO LLAMARLA DESDE EL EVENTO
@@ -43,6 +43,7 @@ const btnInciarJuego = document.getElementById('iniciar-juego')
 //     return palabras[Math.round(Math.random()*(palabras.length-1))]
 // }
 
+//* PALABRA ELEGIDA
 let palabraElegida = palabras[Math.round(Math.random()*(palabras.length-1))]
 console.log(palabraElegida)
 
@@ -50,20 +51,20 @@ btnInciarJuego.addEventListener("click", ()=>{
     console.log("incia el juego")
 
 
-    // DIVIDIR PALABRA EN SILABAS
+    //* CREAR UN ARRAY CON LAS SILABAS
     
     let arraySilabas = palabraElegida.split("")
     console.log(arraySilabas)
     
     
-    // CREAR LI SEGUN palabrArray
+    //* CREAR LI SEGUN palabrArray
     
     for (let i of arraySilabas){
-    const letra = document.createElement("li")
+    const letra = document.createElement("span")
     letra.textContent=i
     espaciosSilabas.appendChild(letra)
 }
-    //*falta eliminar los li creados o replazarlos por li nvos
+    //!falta eliminar los li creados o replazarlos por li nvos
     // espaciosSilabas.removeChild(letra)
     // parentElement
     // BORRAR CHILD
@@ -72,16 +73,38 @@ btnInciarJuego.addEventListener("click", ()=>{
 
 })
 
-// VALIDAR COINCIDENCIA DE LETRAS 
+//* VALIDAR COINCIDENCIA DE LETRAS 
 
 letraIngresada.addEventListener("keypress", (event) => {
-    for (let i in palabraElegida)
-    if (event.key == document.querySelector("ul").children[i].textContent) {
-    console.log("acerto")
-    } else {
-        
+    if (palabraElegida != palabraElegida.replace(/event.key/g,1)){
+        console.log("acerto")
     }
 
+
+
+
+
+
+    //? for (let i in palabraElegida)
+    //? if (event.key == document.querySelector("ul").children[i].textContent) {
+    //? console.log("acerto")
+    //? } else {
+        
+    //? console.log("NO acerto")
+
+    // const canvas = document.querySelector('canvas');
+    // const pincel = canvas.getContext('2d');
+
+    // pincel.fillStyle = "red"
+    // pincel.fillRect(0, 0, canvas.width, canvas.height)
+
+
+    // pincel.fillStyle = "green"
+    // pincel.fillRect(200,750,15,-600)
+    // pincel.fillRect(200,150,0,15)
+
+
+    
     
 })
 
