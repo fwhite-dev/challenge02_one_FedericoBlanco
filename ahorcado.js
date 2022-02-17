@@ -62,6 +62,8 @@ btnInciarJuego.addEventListener("click", ()=>{
     for (let i of arraySilabas){
     const letra = document.createElement("span")
     letra.textContent=i
+    letra.style.border = "2px solid #E7E247"
+    letra.style.paddingLeft= "2px"
     espaciosSilabas.appendChild(letra)
 }
     //!falta eliminar los li creados o replazarlos por li nvos
