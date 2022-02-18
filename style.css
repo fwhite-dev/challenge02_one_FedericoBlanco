@@ -70,7 +70,7 @@ list-style: none;
   text-transform: uppercase;
 }
 
-
+/* 
 .silabas{  
   font-family:"Oswald, sans-serif";
   font-size: 70px;
@@ -78,11 +78,11 @@ list-style: none;
   border-bottom: 2px solid #fff;
   padding-left: 8px;
   padding-right: 8px;
-}
+} */
 
 
-.prueba {
-  background-color: #fff;
+.visible {
+  color: #E7E247
 }
 
 

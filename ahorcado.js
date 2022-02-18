@@ -49,36 +49,39 @@ console.log(palabraElegida)
 
 btnInciarJuego.addEventListener("click", () => {
     console.log("incia el juego")
+
 //* CREAR UN ARRAY CON LAS SILABAS   
     let arraySilabas = palabraElegida.split("")
     console.log(arraySilabas)
+    
 //* CREAR SPAN SEGUN palabrArray
     for (i of arraySilabas){
         const letra = document.createElement("span")
+
         letra.textContent=i
-        
         letra.style.borderBottom = "2px solid #E7E247"
         letra.style.paddingLeft= "8px"
         letra.style.paddingRight= "8px"
         letra.style.fontFamily="Oswald, sans-serif";
         letra.style.fontSize="24px";
-        letra.style.color="#E7E247"
+        letra.style.color="#3D3B30"
         
         espaciosSilabas.appendChild(letra)
-        let r = document.querySelector("span")
-        console.log(r)
     }
-    
-    letraIngresada.addEventListener("keypress", (event) => {
-        for(silaba of arraySilabas){
-            
-            if(silaba == event.key){
-                    console.log("acerto")
 
-                } else {
-                console.log("NO acerto")
-                
-                }}})
+    letraIngresada.addEventListener("keypress", (event) => {
+
+        function checkAvailability(arr, val) {
+            return arr.some(arrVal => val === arrVal);
+        }
+
+        if(checkAvailability(arraySilabas, event.key)){
+            console.log("ok")
+        } else {
+            console.log("no ok")
+        }
+
+        })
     })
     
     
