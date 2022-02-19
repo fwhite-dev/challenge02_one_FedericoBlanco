@@ -52,13 +52,14 @@ btnInciarJuego.addEventListener("click", () => {
 
 //* CREAR UN ARRAY CON LAS SILABAS   
     let arraySilabas = palabraElegida.split("")
-    console.log(arraySilabas)
+    // console.log(arraySilabas)
     
 //* CREAR SPAN SEGUN palabrArray
     for (i of arraySilabas){
         const letra = document.createElement("span")
 
         letra.textContent=i
+        letra.classList.add(i)
         letra.style.borderBottom = "2px solid #E7E247"
         letra.style.paddingLeft= "8px"
         letra.style.paddingRight= "8px"
@@ -74,18 +75,36 @@ btnInciarJuego.addEventListener("click", () => {
         function checkAvailability(arr, val) {
         return  arr.some((arrVal) => val === arrVal );
         }
-        console.log(arraySilabas)
-        console.log(event.key)
-        console.log(checkAvailability(arraySilabas, event.key))
+        // console.log(arraySilabas)
+        // console.log(event.key)
+        // console.log(checkAvailability(arraySilabas, event.key))
         
         if(checkAvailability(arraySilabas, event.key)) {
-        
-        
-            let pocion = document.querySelectorAll("span")
-            console.log(Array.from(pocion))
-            // pocion.forEach((x,index)=>span.index)
-        } else {
             
+            console.log("acerto")
+
+            let pintar = document.querySelector("."+event.key)
+            pintar.style.color="#E7E247"
+        
+            // let arrayDeSpan = document.querySelectorAll("span")
+            // console.log(arrayDeSpan)
+            // console.log(Array.from(arrayDeSpan))
+            // arrayDeSpan.forEach((x)=>console.log(x))
+
+
+
+        } else {
+            console.log("no acerto")
+            // const canvas = document.querySelector('canvas');
+            // const pincel = canvas.getContext('2d');
+            
+            // pincel.fillStyle = "red"
+            // pincel.fillRect(0, 0, canvas.width, canvas.height)
+            
+            
+            // pincel.fillStyle = "green"
+            // pincel.fillRect(200,750,15,-600)
+            // pincel.fillRect(200,150,0,15) 
         }
     })
 })
@@ -98,16 +117,6 @@ btnInciarJuego.addEventListener("click", () => {
         
     //? console.log("NO acerto")
 
-    // const canvas = document.querySelector('canvas');
-    // const pincel = canvas.getContext('2d');
-
-    // pincel.fillStyle = "red"
-    // pincel.fillRect(0, 0, canvas.width, canvas.height)
-
-
-    // pincel.fillStyle = "green"
-    // pincel.fillRect(200,750,15,-600)
-    // pincel.fillRect(200,150,0,15) 
 
 
 
