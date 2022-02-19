@@ -83,8 +83,10 @@ btnInciarJuego.addEventListener("click", () => {
             
             console.log("acerto")
 
-            let pintar = document.querySelector("."+event.key)
-            pintar.style.color="#E7E247"
+            let pintar = document.querySelectorAll("."+event.key)
+            pintar.forEach((x,index) => pintar[index].style.color="#E7E247")
+            // console.log(pintar)
+            // pintar.style.color="#E7E247"
         
             // let arrayDeSpan = document.querySelectorAll("span")
             // console.log(arrayDeSpan)
