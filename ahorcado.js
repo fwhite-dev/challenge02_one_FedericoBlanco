@@ -22,6 +22,9 @@ const letraIngresada = document.getElementById('input-nueva-palabra');
 // REFERENCIA BOTON INCIAR
 const btnAgregarPalabra = document.getElementById('nueva-palabra');
 
+
+
+//*---------------------------------------------------------------EVENTO AGREGAR PALABRA------------------
 btnAgregarPalabra.addEventListener('click',(event)=>{
     event.preventDefault();
     // !no funciona el if para validar string vacio
@@ -36,23 +39,22 @@ btnAgregarPalabra.addEventListener('click',(event)=>{
 
 
 //* SELECCIONAR PALABRA
+let elegirPalabraRandom = () => {
+    return palabras[Math.round(Math.random()*(palabras.length-1))]
+}
+let palabraElegida = elegirPalabraRandom()
 
 const btnInciarJuego = document.getElementById('iniciar-juego')
-// !FUNCION PARA LLAMAR EN EL ENVENTO DEL btnInciarJuego. NO PUEDO LLAMARLA DESDE EL EVENTO
-// let elegirPalabraRandom = () => {
-//     return palabras[Math.round(Math.random()*(palabras.length-1))]
-// }
 
-//* PALABRA ELEGIDA
-let palabraElegida = palabras[Math.round(Math.random()*(palabras.length-1))]
-console.log(palabraElegida)
 
-btnInciarJuego.addEventListener("click", () => {
-    console.log("incia el juego")
 
+
+//*---------------------------------------------------------------EVENTO INICAR EL JUEGO------------------------------------------
+btnInciarJuego.addEventListener("click", (event) => {
+    
 //* CREAR UN ARRAY CON LAS SILABAS   
     let arraySilabas = palabraElegida.split("")
-    // console.log(arraySilabas)
+    console.log(arraySilabas)
     
 //* CREAR SPAN SEGUN palabrArray
     for (i of arraySilabas){
@@ -75,52 +77,28 @@ btnInciarJuego.addEventListener("click", () => {
         function checkAvailability(arr, val) {
         return  arr.some((arrVal) => val === arrVal );
         }
-        // console.log(arraySilabas)
-        // console.log(event.key)
-        // console.log(checkAvailability(arraySilabas, event.key))
-        
-        if(checkAvailability(arraySilabas, event.key)) {
-            
-            console.log("acerto")
-
-            let pintar = document.querySelectorAll("."+event.key)
-            pintar.forEach((x,index) => pintar[index].style.color="#E7E247")
-            // console.log(pintar)
-            // pintar.style.color="#E7E247"
-        
-            // let arrayDeSpan = document.querySelectorAll("span")
-            // console.log(arrayDeSpan)
-            // console.log(Array.from(arrayDeSpan))
-            // arrayDeSpan.forEach((x)=>console.log(x))
-
-
-
-        } else {
-            console.log("no acerto")
-            // const canvas = document.querySelector('canvas');
-            // const pincel = canvas.getContext('2d');
-            
-            // pincel.fillStyle = "red"
-            // pincel.fillRect(0, 0, canvas.width, canvas.height)
-            
-            
-            // pincel.fillStyle = "green"
-            // pincel.fillRect(200,750,15,-600)
-            // pincel.fillRect(200,150,0,15) 
-        }
+            if(checkAvailability(arraySilabas, event.key)) {
+                    let pintar = document.querySelectorAll("."+event.key)
+                    pintar.forEach((x,index) => pintar[index].style.color="#E7E247")
+            } else {
+                console.log("no acerto")
+                // const canvas = document.querySelector('canvas');
+                // const pincel = canvas.getContext('2d');
+                
+                // pincel.fillStyle = "red"
+                // pincel.fillRect(0, 0, canvas.width, canvas.height)
+                
+                
+                // pincel.fillStyle = "green"
+                // pincel.fillRect(200,750,15,-600)
+                // pincel.fillRect(200,150,0,15) 
+            }
     })
+    
+    
+
+
 })
-
-
-//? for (let i in palabraElegida)
-//? if (event.key == document.querySelector("ul").children[i].textContent) {
-    //? console.log("acerto")
-    //? } else {
-        
-    //? console.log("NO acerto")
-
-
-
 
 
 
