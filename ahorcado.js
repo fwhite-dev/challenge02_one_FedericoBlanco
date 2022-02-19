@@ -72,21 +72,27 @@ btnInciarJuego.addEventListener("click", () => {
     letraIngresada.addEventListener("keypress", (event) => {
 
         function checkAvailability(arr, val) {
-            return arr.some(arrVal => val === arrVal);
+        return  arr.some((arrVal) => val === arrVal );
         }
-
-        if(checkAvailability(arraySilabas, event.key)){
-            console.log("ok")
+        console.log(arraySilabas)
+        console.log(event.key)
+        console.log(checkAvailability(arraySilabas, event.key))
+        
+        if(checkAvailability(arraySilabas, event.key)) {
+        
+        
+            let pocion = document.querySelectorAll("span")
+            console.log(Array.from(pocion))
+            // pocion.forEach((x,index)=>span.index)
         } else {
-            console.log("no ok")
+            
         }
-
-        })
     })
-    
-    
-    //? for (let i in palabraElegida)
-    //? if (event.key == document.querySelector("ul").children[i].textContent) {
+})
+
+
+//? for (let i in palabraElegida)
+//? if (event.key == document.querySelector("ul").children[i].textContent) {
     //? console.log("acerto")
     //? } else {
         
