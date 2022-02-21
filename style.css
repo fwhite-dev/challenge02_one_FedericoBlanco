@@ -68,6 +68,10 @@ list-style: none;
   align-items:center;
   justify-content:space-evenly;
   text-transform: uppercase;
+  border-radius: 10px;
+}
+ul:hover{
+  color: #E7E247
 }
 
 /* 
@@ -85,5 +89,8 @@ list-style: none;
   color: #E7E247
 }
 
-
+.canvas{
+  margin-top: 50px;
+  border-radius: 20px;
+}
 

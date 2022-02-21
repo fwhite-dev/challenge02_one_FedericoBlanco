@@ -23,7 +23,6 @@ const letraIngresada = document.getElementById('input-nueva-palabra');
 const btnAgregarPalabra = document.getElementById('nueva-palabra');
 
 
-
 //*---------------------------------------------------------------EVENTO AGREGAR PALABRA------------------
 btnAgregarPalabra.addEventListener('click',(event)=>{
     event.preventDefault();
@@ -103,7 +102,13 @@ btnInciarJuego.addEventListener("click", (event) => {
 
 
 
+/* 
+-MENSAJE DE GANO EL JUEGO 
+-RESETEAR LA PALABRA CUANDO SE DA CLICK EN EL BOTON INICIAL
+-DIBUJO INCIAL DEL CANVAS
+-DIBUJO CUANDO ERRA UNA LETRA
 
 
 
+*/
 
